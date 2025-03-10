@@ -54,6 +54,17 @@ userGroupsFromFile:
   enabled: false #Enable it to true if user wants to display groups in the ISD UI
 
 #######################################################################################
+opsmxLicense:
+  enabled: true #Enable it to true if user wants to display License Information in the ISD UI
+  repo: Product_License 
+  owner: OpsMx
+  path: <ecrypted_filePath>
+  branch: <branchName>
+  encryptKey: <hexadecimalOf16BytesRandomString>
+  notifyValidityInDays: 30
+
+
+#######################################################################################
 # Global Configuration
 ######################
 
@@ -1337,7 +1348,7 @@ carinamanager:
   ##
   image:
     repository: carina-manager
-    tag: v1.15.5
+    tag: v1.15.6
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1366,7 +1377,7 @@ carinainstance:
 vela:
   image:
     repository: vela-api
-    tag: isd-argo-2024.08.00-202409030840
+    tag: isd-argo-2025.01.00-202501271105
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1413,7 +1424,7 @@ ui:
   ## Image specific details
   image:
     repository: ubi8-oes-ui
-    tag: isd-argo-2024.08.00-202409060628
+    tag: isd-argo-2025.01.00-a1e676e66-202501240954
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1429,7 +1440,7 @@ autopilot:
   ## Image specific details
   image:
     repository: ubi8-oes-autopilot
-    tag: isd-argo-2024.08.00-202409030840
+    tag: isd-argo-2025.01.00-9fbe0bbd3-202501150455
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1459,12 +1470,13 @@ notificationservice:
   ##
   image:
     repository: ubi8-oes-notification-service
-    tag: isd-argo-2024.08.00-202409031319
+    tag: isd-argo-2025.01.00-603dc1d-202501150821
     pullPolicy: IfNotPresent
   host: smtp.gmail.com
   port: 587
   username: REPLACE.YOUR.MAIL.ID
   password: REPLACE.YOUR.MAIL.PASSWORD
+  fromemail: <name@abc.com>
 
   serviceAnnotations: {}
 
@@ -1483,7 +1495,7 @@ audit:
   ##
   image:
     repository: ubi8-oes-audit-service
-    tag: isd-argo-2024.08.00-202409040940
+    tag: isd-argo-2025.01.00-09527cb-202501150700
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1504,7 +1516,7 @@ auditClient:
   ##
   image:
     repository: ubi8-oes-audit-client
-    tag: isd-argo-2024.08.00-202409031242
+    tag: isd-argo-2025.01.00-7b1f0f5-202501150654
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1525,7 +1537,7 @@ datascience:
   ##
   image:
     repository: ubi8-oes-datascience
-    tag: isd-argo-2024.08.00-202409040513
+    tag: isd-argo-2025.01.00-9fbe0bbd3-202501150455
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1543,7 +1555,7 @@ dashboard:
   ## Image specific details
   image:
     repository: ubi8-oes-dashboard
-    tag: isd-argo-2024.08.00-202409040942
+    tag: isd-argo-2025.01.00-e9db428-202501211105
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1576,7 +1588,7 @@ gate:
   ## Image specific details
   image:
     repository: ubi8-gate
-    tag: isd-argo-2024.08.00-202409031319
+    tag: isd-argo-2025.01.00-f1971a37-202501150815
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1665,7 +1677,7 @@ platform:
   ## Image specific details
   image:
     repository: ubi8-oes-platform
-    tag: isd-argo-2024.08.00-202409061155
+    tag: isd-argo-2025.01.00-7d7533c7-202501240835
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1705,7 +1717,7 @@ sapor:
   ## Image specific details
   image:
     repository: ubi8-oes-sapor
-    tag: isd-argo-2024.08.00-202409061415
+    tag: isd-argo-2025.01.00-368fa618-202501200443
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1765,7 +1777,7 @@ visibility:
   ## Image specific details
   image:
     repository: ubi8-oes-visibility
-    tag: isd-argo-2024.08.00-202409030837
+    tag: isd-argo-2025.01.00-b2c8eb0-202501150453
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1848,7 +1860,7 @@ secretStore: db
 forwarder:
   enabled: true
   agent:
-    image: quay.io/opsmxpublic/agent-client:v5.1.1
+    image: quay.io/opsmxpublic/agent-client:v5.1.2
     serviceType: ClusterIP
     # Value is also used in sapor configuration for kubernetes.agent.serverHostName
     host: REPLACE.THIS.WITH.YOURCOMPANY.COM
@@ -1860,7 +1872,7 @@ forwarder:
         secretName: controller-ingress
   image:
     repository: quay.io/opsmxpublic/agent-controller
-    tag: v5.1.1
+    tag: v5.1.2
     pullPolicy: IfNotPresent
   serverNames:
     - agent-grpc

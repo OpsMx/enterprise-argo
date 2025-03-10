@@ -13,6 +13,7 @@ smtp:
   port: {{ .Values.notificationservice.port }}
   username: {{ .Values.notificationservice.username }}
   password: {{ .Values.notificationservice.password }}
+  fromemail: {{ .Values.notificationservice.fromemail }}
 
 management:
   health:

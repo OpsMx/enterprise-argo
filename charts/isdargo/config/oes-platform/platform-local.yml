@@ -1,20 +1,17 @@
-{{- if (eq .Values.secretStore "db") }}
 spring:
   main:
     allow-circular-references: true
     lazy-initialization: true
+ {{- if (eq .Values.secretStore "db") }} 
   datasource:
     url: {{ .Values.db.url }}/platformdb
     username: '{{ .Values.db.username }}'
     password: '{{ .Values.db.password }}'
+  {{- end }}
 ldap.managerPassword: '{{ .Values.global.ldap.managerPassword }}'
 redis:
     connection: {{ template "oes.redisBaseURL" . }}
-#datasource.url: {{ .Values.db.url }}/visibilitydb
-#postgres.password: '{{ .Values.db.password }}'
-#postgres.username: '{{ .Values.db.username }}'
-{{- end }}
-
+  
 datasource:
   secretManagement:
     source: {{ .Values.secretStore }}
@@ -34,11 +31,11 @@ dashboard:
         milliseconds: 300000
     workerThreads: 50
 user:
-  {{- if .Values.gate.config.spring.security.saml2.enabled  }}
+ {{- if .Values.gate.config.spring.security.saml2.enabled  }}
   source: {{ .Values.gate.config.spring.security.saml2.userSource  }}
-  {{- else }}
+ {{- else }}
   source: {{ .Values.platform.config.userSource }}
-  {{- end }}
+ {{- end }}
 ldap:
   enabled: {{ .Values.global.ldap.enabled }}
   url: {{ tpl .Values.global.ldap.url . }}
@@ -113,3 +110,14 @@ argoRollout:
   appAutoCreation: false
   {{- end }}
   {{- end }}
+{{- if .Values.opsmxLicense.enabled }}
+github:
+      baseUrl: https://api.github.com
+      repo: {{ .Values.opsmxLicense.repo }}
+      owner: {{ .Values.opsmxLicense.owner }}
+      path: {{ .Values.opsmxLicense.path }}
+      branch: {{ .Values.opsmxLicense.branch }}
+      encryptKey: {{ .Values.opsmxLicense.encryptKey }}
+      notifyValidityInDays: {{ .Values.opsmxLicense.notifyValidityInDays }}
+{{- end }}
+

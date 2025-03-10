@@ -3,7 +3,7 @@ name: Release Charts
 on:
   push:
     branches:
-      - v4.1.8
+      - v2025.01.00
     paths:
       - 'charts/isdargo/Chart.yaml'
       - 'charts/isdargo/Chart.lock'

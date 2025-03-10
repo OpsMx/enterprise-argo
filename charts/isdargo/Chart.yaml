@@ -1,16 +1,19 @@
+
 apiVersion: v2
 name: isdargo
-version: 4.1.11
-appVersion: 4.1.8
-description: "ISD-Argo with v2.5.4 with KeyCloak,RBAC features and Improvements of Kubernetes Job for Delivery Verification, Token Generation changes"
+version: 4.1.13
+appVersion: 2025.01.00
+description: "ISD-Argo with v2.5.4 with Feature to use Multiple Application Synchronization through ISD similar to Argo CD and Option to display OpsMx License information in ISD UI"
 icon: https://raw.githubusercontent.com/OpsMx/enterprise-argo/main/img/opsmx.png
 maintainers:
 - email: srinivas@opsmx.io
   name: ksrinimba
-- email: mahesh.kota@opsmx.io
-  name: maheshopsmx
+- email: keerthi.bingi@opsmx.io
+  name: Keerthibingi
 - email: saiteja.katabhatina@opsmx.io
   name: saitejaopsmx
+- email: yeshaswini.m@opsmx.io
+  name: yeshaswiniOpsmx
 keywords:
   - OpsMx
   - ISDARGO
