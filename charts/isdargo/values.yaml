@@ -78,6 +78,9 @@ global:
 
   commonGate:
     enabled: false
+    
+  license:
+      notifyValidityInDays: 30  
 
   oesUI:
     protocol: https
