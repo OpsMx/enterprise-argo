@@ -14,7 +14,8 @@ redis:
 #postgres.password: '{{ .Values.db.password }}'
 #postgres.username: '{{ .Values.db.username }}'
 {{- end }}
-
+license:
+  notifyValidityInDays: {{ .Values.platform.config.license.notifyValidityInDays }}
 datasource:
   secretManagement:
     source: {{ .Values.secretStore }}
