@@ -78,6 +78,9 @@ global:
 
   commonGate:
     enabled: false
+    
+  license:
+      notifyValidityInDays: 30  
 
   oesUI:
     protocol: https
@@ -1366,7 +1369,7 @@ carinainstance:
 vela:
   image:
     repository: vela-api
-    tag: isd-argo-2024.08.00-202409030840
+    tag: isd-argo-2025.04.00-20250409195
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1413,7 +1416,7 @@ ui:
   ## Image specific details
   image:
     repository: ubi8-oes-ui
-    tag: isd-argo-2024.08.00-202409060628
+    tag: isd-argo-2025.04.00-b4f067ef6-202505221607
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1429,7 +1432,7 @@ autopilot:
   ## Image specific details
   image:
     repository: ubi8-oes-autopilot
-    tag: isd-argo-2024.08.00-202409030840
+    tag: isd-argo-2025.04.00-9fbe0bbd3-202504090632
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1459,7 +1462,7 @@ notificationservice:
   ##
   image:
     repository: ubi8-oes-notification-service
-    tag: isd-argo-2024.08.00-202409031319
+    tag: isd-argo-2025.04.00-603dc1d-202504
     pullPolicy: IfNotPresent
   host: smtp.gmail.com
   port: 587
@@ -1483,7 +1486,7 @@ audit:
   ##
   image:
     repository: ubi8-oes-audit-service
-    tag: isd-argo-2024.08.00-202409040940
+    tag: isd-argo-2025.04.00-09527cb-20250409063
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1504,7 +1507,7 @@ auditClient:
   ##
   image:
     repository: ubi8-oes-audit-client
-    tag: isd-argo-2024.08.00-202409031242
+    tag: isd-argo-2025.04.00-7b1f0f5-202504090631
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1525,7 +1528,7 @@ datascience:
   ##
   image:
     repository: ubi8-oes-datascience
-    tag: isd-argo-2024.08.00-202409040513
+    tag: isd-argo-2025.04.00-9fbe0bbd3-2025040906
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1543,7 +1546,7 @@ dashboard:
   ## Image specific details
   image:
     repository: ubi8-oes-dashboard
-    tag: isd-argo-2024.08.00-202409040942
+    tag: isd-argo-2025.04.00-294af4e-202504090651
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1576,7 +1579,7 @@ gate:
   ## Image specific details
   image:
     repository: ubi8-gate
-    tag: isd-argo-2024.08.00-202409031319
+    tag: isd-argo-2025.04.00-4c57a1a7-202505160841
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1665,7 +1668,7 @@ platform:
   ## Image specific details
   image:
     repository: ubi8-oes-platform
-    tag: isd-argo-2024.08.00-202409061155
+    tag: isd-argo-2025.04.00-4a1643ff-202505160837
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1705,7 +1708,7 @@ sapor:
   ## Image specific details
   image:
     repository: ubi8-oes-sapor
-    tag: isd-argo-2024.08.00-202409061415
+    tag: isd-argo-2025.04.00-368fa618-202504090632
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1765,7 +1768,7 @@ visibility:
   ## Image specific details
   image:
     repository: ubi8-oes-visibility
-    tag: isd-argo-2024.08.00-202409030837
+    tag: isd-argo-2025.04.00-b2c8eb0-202504090558
     pullPolicy: IfNotPresent
 
   annotations:

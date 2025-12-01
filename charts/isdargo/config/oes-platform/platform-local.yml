@@ -14,13 +14,14 @@ redis:
 #postgres.password: '{{ .Values.db.password }}'
 #postgres.username: '{{ .Values.db.username }}'
 {{- end }}
-
 datasource:
   secretManagement:
     source: {{ .Values.secretStore }}
 rbacEnabled: true
 supportedFeatures:
 {{ toYaml .Values.platform.config.supportedFeatures | indent 2 }}
+license:
+  notifyValidityInDays: {{ .Values.license.notifyValidityInDays }}
 userGroup:
   superAdminGroups: {{ .Values.global.saporgate.config.adminGroups }}
 dashboard:
